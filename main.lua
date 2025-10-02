@@ -1,3 +1,6 @@
+-- SHAW Simulator
+-- this thing sucks so far lol
+
 math.randomseed(os.time())
 
 Player = {}
