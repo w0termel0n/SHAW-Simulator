@@ -12,8 +12,8 @@ Player.h = 16
 
 Attack = {}
 Attack.__index = Attack
-Attack.speed = 4
-Attack.interval = 1.5
+Attack.speed = 17
+Attack.interval = 1.15
 
 attack_order = {}
 asset_order = {}
@@ -116,17 +116,15 @@ function attack_updates()
 
     for i, attack in ipairs(attack_order) do
         if attack.vector == 1 and attack.x >= obw then
-            attack.speed = 15
             attack.x = attack.x + (attack.vector * attack.speed)
         elseif attack.vector == 1 and attack.x >= bw then
             table.remove(attack_order, i)
         elseif attack.vector == -1 and attack.x <= bw then
-            attack.speed = 15
             attack.x = attack.x + (attack.vector * attack.speed)
         elseif attack.vector == -1 and attack.x <= obw then
             table.remove(attack_order, i)
         else
-            attack.x = attack.x + (attack.vector * attack.speed)
+            attack.x = attack.x + (attack.vector * (attack.speed - 13))
         end
     end
 end
